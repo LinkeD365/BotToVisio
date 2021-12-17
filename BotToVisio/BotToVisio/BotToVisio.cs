@@ -13,7 +13,7 @@ namespace LinkeD365.BotToVisio
     // To generate Base64 string for Images below, you can use https://www.base64-image.de/
     [Export(typeof(IXrmToolBoxPlugin))]
     [ExportMetadata("Name", "Chatbot to Visio Builder")]
-    [ExportMetadata("Description", "Tool to document your Chatbot canvas in Visio")]
+    [ExportMetadata("Description", "Tool to document your Power Virtual Agents Topics in Visio")]
     // Please specify the base64 content of a 32x32 pixels image
     [ExportMetadata("SmallImageBase64", "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANSSURBVEhL7ZVLKK1RFMe3Z0yUEgMcA2+S1/EohIkixQApBkwk6owwoJzJSZmYmZgYyKMUUiQDeUQZeCTPyEB5hBKSN/d3zt6Xe30fn3QNbvkP9llr7f2t/97rdZyen5/Fd8JZ/X4bfggM8akkLy0tnZ+fOzv/dZunpycvL6+EhASlvwMDgoeHh5GRkfv7ex8fHy3B6empq6trfn4+q7JqYEAwOjp6c3OTl5fn4eGhTH+ALQ6wxQFl0uCjHHDBw8PDrKysF+82m00KEtizs7M5c3JyokwafEQwMDBA6A8ODpQuxMXFhZJ+Y39/H+Pg4KDSNfiIICAgICgoaG9vT+l6YNdkMvn7+ytdAwMCMpmbm6t0Ie7u7ra2toiJ0oUg+mTxiwQxMTF8PD09rXQhqqurZ2ZmVldXlS4Eu4+Pj7GxsUrXwKCKdnZ2FhcXvb2909PTPT09ldUBSgiys7Oz+Pj40NBQZdXAuNGI8vr6OpGB5qUVCB2uw8PDIyMjyZM06uJTnQy47/HxMX6lCpOvr69uc7zBZwm+jFeC3d3d+fl5Jwf8/PzS0tLc3NywHx0dDQ0NXV5ehoWFUTPSKEfI9vZ2cHBwQUEBD6K0JicnpTcmR0lJid0pwCTR2dmJmpSUNDw8HBgYGB0dTX9eXV0lJyeTzNbWVnb5jJO3t7c0MGdWVlbq6ura2towdnR0OPzZERUV5XBpx1uCnJwc5KamJuSGhgYy3NzcjEW2G/WO3N7ejlxTU4M8Ozvb19eHYLFYurq6oAQEA4uEfh/Ixpmbm+OajY2Nvb29tbW1lKkkHh8fZ93Y2EhJSamvr+etqDTH1NRUaWlpVVXV8vIyFgl9Ahno6+trVsK9trZGJpj+skwpUFaSxFO4RGVlJWpERER5efnExAQni4uL+QQj0CcgpawMGd47NjbGEGUsU6a8gxFLCbAbEhLCLEHY3NxkhJCqzMxMtuLi4ujthYUFu6P3CCgn1oqKCgh4ODIuCKiLi4u7u3thYSEWSgBKBLPZzNBtaWlBxjVdyUNf/+lkKkB/fz89mZiYWFZWlpGR0d3djZGnoPJ2Opa+lUbazWq14oJjBIpxgpFaKCoqSk1NJVY9PT12jw58e6Pph+gf4ofAEP87gRC/AD2r9paj2iJuAAAAAElFTkSuQmCC")]
     // Please specify the base64 content of a 80x80 pixels image
@@ -21,8 +21,11 @@ namespace LinkeD365.BotToVisio
     [ExportMetadata("BackgroundColor", "LightGreen")]
     [ExportMetadata("PrimaryFontColor", "Black")]
     [ExportMetadata("SecondaryFontColor", "Gray")]
-    public class BotToVisio : PluginBase
+    public class BotToVisio : PluginBase, IPayPalPlugin
     {
+        public string DonationDescription => "Bot to Visio Fans";
+
+        public string EmailAccount => "carl.cookson@gmail.com";
         public override IXrmToolBoxPluginControl GetControl()
         {
             return new BotToVisioCtl();

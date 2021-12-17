@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BotToVisio")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Bot To Visio")]
+[assembly: AssemblyDescription("A XrmToolBox tool to document your Chat Bot Topics as Visio")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Linked365")]
 [assembly: AssemblyProduct("BotToVisio")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
