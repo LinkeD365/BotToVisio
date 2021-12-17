@@ -9,11 +9,20 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using XrmToolBox.Extensibility;
+using XrmToolBox.Extensibility.Interfaces;
 
 namespace LinkeD365.BotToVisio
 {
-    public partial class BotToVisioCtl : PluginControlBase
+    public partial class BotToVisioCtl : PluginControlBase, IGitHubPlugin, IPayPalPlugin
     {
+        #region Interface bits
+        public string RepositoryName => "BotToVisio";
+        public string UserName => "LinkeD365";
+
+        public string DonationDescription => "PVA to Visio Fans";
+
+        public string EmailAccount => "carl.cookson@gmail.com";
+        #endregion
         #region Ctrl Load
 
         private Settings mySettings;
