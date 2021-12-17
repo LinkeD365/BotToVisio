@@ -155,9 +155,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.VisualStudio.CoreUtility">
-      <Private>False</Private>
-    </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Activities" />
@@ -184,6 +181,7 @@
     <Reference Include="WeifenLuo.WinFormsUI.Docking.ThemeVS2015, Version=3.0.6.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
       <HintPath>..\packages\DockPanelSuite.ThemeVS2015.3.0.6\lib\net40\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
     <Reference Include="XrmToolBox, Version=1.2021.5.47, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\XrmToolBoxPackage.1.2021.5.47\lib\net462\XrmToolBox.exe</HintPath>
     </Reference>
@@ -206,26 +204,55 @@
       <DependentUpon>BotToVisioCtl.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Bot.cs" />
+    <Compile Include="Classes\Shape.Action.cs" />
+    <Compile Include="Classes\Shape.Condition.cs" />
+    <Compile Include="Classes\Shape.cs" />
+    <Compile Include="Classes\Shape.Line.cs" />
+    <Compile Include="Classes\Shape.Message.cs" />
+    <Compile Include="Classes\Shape.Question.cs" />
+    <Compile Include="Classes\Shape.Topic.cs" />
+    <Compile Include="Classes\Shape.Trigger.cs" />
     <Compile Include="Classes\Topic.cs" />
+    <Compile Include="Classes\Topic.Messages.cs" />
+    <Compile Include="Classes\Topic.Node.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Utils\Utils.Visio.Nodes.cs" />
+    <Compile Include="Utils\Utils.VisioBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="BotToVisio.nuspec" />
     <None Include="packages.config" />
+    <None Include="Resources\VisioTemplate PVA.vsdx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BotToVisioCtl.resx">
       <DependentUpon>BotToVisioCtl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visio icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>IF $(ConfigurationName) == Debug (
-      IF NOT EXIST Plugins mkdir Plugins
-      xcopy "$(TargetDir)$(TargetFileName)" "$(TargetDir)Plugins\" /Y
+    <PostBuildEvent>IF NOT EXIST Plugins mkdir Plugins
+IF $(ConfigurationName) == Debug (
+
+ 
       xcopy "$(TargetDir)$(TargetName).pdb" "$(TargetDir)Plugins\" /Y
-      )</PostBuildEvent>
+      )
+     xcopy "$(TargetDir)$(TargetFileName)" "$(TargetDir)Plugins\" /Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.  

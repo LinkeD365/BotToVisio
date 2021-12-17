@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LinkeD365.BotToVisio
 {
-    class Topic
+    public class Topic
     {
         [Browsable(false)]
         public string Id { get; set; }
@@ -15,5 +15,7 @@ namespace LinkeD365.BotToVisio
         public string Description { get; set; }
         [Browsable(false)]
         public string Canvas { get; set; }
+        [Browsable(false)]
+        public string SchemaName { get; set; }
     }
 }
