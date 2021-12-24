@@ -39,3 +39,7 @@ jobs:
       
     - name: Pack it
       run: nuget pack BotToVisio/BotToVisio.nuspec -Version 1.1
+    
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.3.1
+      
