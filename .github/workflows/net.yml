@@ -32,4 +32,4 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5
 
     - name: Restore NuGet packages
-      run: nuget restore BotToVisio.sln
+      run: nuget restore BotToVisio/BotToVisio.sln
