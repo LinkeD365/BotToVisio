@@ -35,7 +35,7 @@ jobs:
       run: nuget restore BotToVisio/BotToVisio.sln
       
     - name: Build it
-      run: msbuild BotToVisio/BotToVisio.sln /t:Restore /p:Configuration=Release
+      run: msbuild BotToVisio/BotToVisio.sln /p:Configuration=Release
       
     - name: Pack it
       run: nuget pack BotToVisio/BotToVisio.nuspec -Version 1.1
