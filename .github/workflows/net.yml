@@ -36,3 +36,6 @@ jobs:
       
     - name: Build it
       run: msbuild BotToVisio/BotToVisio.sln /t:Restore /p:Configuration=Release
+      
+    - name: Pack it
+      run: nuget pack
