@@ -18,7 +18,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: windows-latest
     env:
-      Solution_Name: dBotToVisio.sln
+      Solution_Name: BotToVisio/BotToVisio.sln
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
@@ -33,3 +33,6 @@ jobs:
 
     - name: Restore NuGet packages
       run: nuget restore BotToVisio/BotToVisio.sln
+      
+    - name: Build it
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=Release
