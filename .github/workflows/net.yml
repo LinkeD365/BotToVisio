@@ -35,4 +35,4 @@ jobs:
       run: nuget restore BotToVisio/BotToVisio.sln
       
     - name: Build it
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=Release
+      run: msbuild BotToVisio/BotToVisio.sln /t:Restore /p:Configuration=Release
