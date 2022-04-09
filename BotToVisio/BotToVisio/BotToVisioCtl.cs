@@ -132,7 +132,7 @@ Do you want to open the Visio File?", "Visio created successfully", MessageBoxBu
         {
             WorkAsync(new WorkAsyncInfo
             {
-                Message = "Retrieiving the Custom Entities",
+                Message = "Retrieving the Custom Entities",
                 Work = (w, e) =>
                 {
                     var fetchXml = $@"
@@ -175,7 +175,7 @@ Do you want to open the Visio File?", "Visio created successfully", MessageBoxBu
         {
             WorkAsync(new WorkAsyncInfo
             {
-                Message = "Retrieiving the Chat Bots",
+                Message = "Retrieving the Chat Bots",
                 Work = (w, e) =>
                 {
                     var fetchXml = $@"
@@ -215,7 +215,7 @@ Do you want to open the Visio File?", "Visio created successfully", MessageBoxBu
             string selectedBotId = ((Bot)cboBot.SelectedItem).Id;
             WorkAsync(new WorkAsyncInfo
             {
-                Message = "Retrieiving the Topics",
+                Message = "Retrieving the Topics",
                 Work = (w, e) =>
                 {
                     var fetchXml = $@"
