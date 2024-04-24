@@ -204,6 +204,7 @@
       <DependentUpon>BotToVisioCtl.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Bot.cs" />
+    <Compile Include="Classes\JSONHelper.cs" />
     <Compile Include="Classes\Shape.Action.cs" />
     <Compile Include="Classes\Shape.Condition.cs" />
     <Compile Include="Classes\Shape.cs" />

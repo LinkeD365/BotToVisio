@@ -1,4 +1,5 @@
 ﻿using LinkeD365.BotToVisio.Properties;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -180,7 +181,12 @@ namespace LinkeD365.BotToVisio
             _actions = null;
             XmlPage = GetXMLFromPart(templatePage);
 
-            pvaObject = JObject.Parse(topic.Canvas);
+            var options = new JsonLoadSettings
+            {
+                
+            };
+            //pvaObject =  JObject.Parse(topic.Canvas, );
+            pvaObject = JsonHelper.ParseLower(topic.Canvas);
             Shapes = new List<BaseShape>();
 
 
