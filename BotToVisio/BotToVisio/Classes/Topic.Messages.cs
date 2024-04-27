@@ -49,7 +49,7 @@ namespace LinkeD365.BotToVisio
             Id = VarNode["id"].ToString();
             ActionId = VarNode["actionId"]?.ToString() ?? string.Empty;
             Type = VarNode["actionId"] != null ? "Action" : VarNode["systemType"]?.ToString() ?? VarNode["systemVariableTypes"]?.First().ToString() ?? Utils.CustomTypes.First(ct => ct.Id == VarNode["customTypeId"].ToString()).Name;
-            MessageId = VarNode["messages"]?["GetValue"]?.First().ToString() ?? string.Empty;
+            MessageId = VarNode["messages"]?["getValue"]?.First().ToString() ?? string.Empty;
             Choices.AddRange(VarNode["namedEntityOptions"]?.Select(jt => jt.ToString()) ?? new string[] { });
         }
     }

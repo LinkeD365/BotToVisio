@@ -150,8 +150,8 @@ Do you want to open the Visio File?", "Visio created successfully", MessageBoxBu
 
 
                     var neRecords = Service.RetrieveMultiple(qe);
-                    var jNEs = neRecords.Entities.Where(ent => ent["content"].ToString().Contains("namedEntities"))
-                           .Select(ne => JObject.Parse(ne["content"].ToString()));
+                    var jNEs = neRecords.Entities.Where(ent => ent["content"].ToString().Contains("NamedEntities"))
+                           .Select(ne => JsonHelper.ParseLower(ne["content"].ToString()));
                     e.Result = jNEs.Select(jobj => new CustomType((JObject)jobj)).ToList();
                     //   e.Result = botRecords.Entities.Select(ent => new Bot() { Id = ent["botid"].ToString(), Name = ent["name"].ToString() }).ToList();
 
